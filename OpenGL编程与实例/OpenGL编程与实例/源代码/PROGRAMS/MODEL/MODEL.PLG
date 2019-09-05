@@ -1,0 +1,55 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Model - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x804 /fo"Debug/Model.res" /d "_DEBUG" /d "_AFXDLL" "E:\VC++学习资料\OpenGL编程与实例\源代码\PROGRAMS\MODEL\Model.rc"" 
+Creating temporary file "C:\DOCUME~1\stardust\LOCALS~1\Temp\RSP201.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Debug/Model.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"E:\VC++学习资料\OpenGL编程与实例\源代码\PROGRAMS\MODEL\MainFrm.cpp"
+"E:\VC++学习资料\OpenGL编程与实例\源代码\PROGRAMS\MODEL\Model.cpp"
+"E:\VC++学习资料\OpenGL编程与实例\源代码\PROGRAMS\MODEL\ModelDoc.cpp"
+"E:\VC++学习资料\OpenGL编程与实例\源代码\PROGRAMS\MODEL\ModelView.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stardust\LOCALS~1\Temp\RSP201.tmp" 
+Creating temporary file "C:\DOCUME~1\stardust\LOCALS~1\Temp\RSP202.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /Fp"Debug/Model.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /c 
+"E:\VC++学习资料\OpenGL编程与实例\源代码\PROGRAMS\MODEL\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\stardust\LOCALS~1\Temp\RSP202.tmp" 
+Creating temporary file "C:\DOCUME~1\stardust\LOCALS~1\Temp\RSP203.tmp" with contents
+[
+opengl32.lib glu32.lib glaux.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/Model.pdb" /debug /machine:I386 /out:"Debug/Model.exe" /pdbtype:sept 
+".\Debug\MainFrm.obj"
+".\Debug\Model.obj"
+".\Debug\ModelDoc.obj"
+".\Debug\ModelView.obj"
+".\Debug\StdAfx.obj"
+".\Debug\Model.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\stardust\LOCALS~1\Temp\RSP203.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+MainFrm.cpp
+Model.cpp
+ModelDoc.cpp
+ModelView.cpp
+Generating Code...
+E:\VC++学习资料\OpenGL编程与实例\源代码\PROGRAMS\MODEL\ModelView.cpp(527) : warning C4700: local variable 'dwMillis' used without having been initialized
+Linking...
+
+
+
+<h3>Results</h3>
+Model.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

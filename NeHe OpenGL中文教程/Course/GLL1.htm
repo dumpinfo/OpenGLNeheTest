@@ -1,0 +1,1512 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://nehe.gamedev.net/lesson.asp?index=01 -->
+<HTML><HEAD><TITLE>NeHe Productions: OpenGL Lessons</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="Jeff Molofee" name=author>
+<META content="OpenGL Tutorials, Demos, Games and More..." name=description>
+<META 
+content="opengl, tutorial, article, demo, game, blend, texturemap, lighting, contest, 3D" 
+name=keywords><LINK href="filez/rgb.css" type=text/css rel=stylesheet>
+<META content="Microsoft FrontPage 5.0" name=GENERATOR>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: "宋体-方正超大字符集", "宋体", "华文中宋", "微软雅黑", "新宋体";
+	font-weight: bold;
+	font-size: medium;
+}
+.style2 {LINE-HEIGHT: normal; FONT-FAMILY: Tahoma, Verdana, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none; font-size: 12px;}
+.style3 {font-family: Tahoma, Verdana, sans-serif}
+.style4 {font-family: Tahoma, Verdana, sans-serif; font-weight: bold; font-size: medium; }
+.style5 {color: #bbccff}
+.style8 {font-size: medium}
+body,td,th {
+	font-size: 18px;
+}
+.style9 {font-size: 18px}
+.style10 {font-family: "宋体-方正超大字符集", "宋体", "华文中宋", "微软雅黑", "新宋体"; font-weight: bold; font-size: 18px; }
+-->
+</style>
+</HEAD>
+<BODY text=white vLink=#aaccff link=#aaccff bgColor=black>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=tinylogo height=130>
+    <p align="center"><FONT class=style2><FONT 
+      size=+3 style="COLOR: #bbccff" #invalid_attr_id="none transparent scroll repeat 0% 0%"><B>课程索引</B></FONT></FONT>          
+    <p align="left"> <span style="background-position: 0% 0%"><font size="+1"><b>最初由<i> LOneWoolf</i></b><span style="background-position: 0% 0%; font-weight: bold;"><font size="+1">编译</font></span></font></span>，<b><font size="+1">由<i><a href="mailto:m0rpheus@ozforces.com.au">M0RPhEuS</a></i>重新编译</font></b>       
+      <p align="left" class="style10">由<span class="style3"><a href="http://www.alucardma.com/DancingWind/OpenGL/Nehe/main.htm">dancingwind</a></span>（周炜，这个链接现在可能无效了）以及<span class="style3">gamedev</span>的志愿者翻译 
+      <p align="left" class="style1"><span class="style4">据我所知，最早的翻译是由<a href="http://blog.csdn.net/cker/">CKER</a>完成的（1~12章)</span>                    
+      <p align="left" class="style4">由<span class="style5"><a href="http://imyaker.blogspot.com">yaker</a></span>补充少量翻译并制作成chm电子书</TD>
+    </TR></TBODY>
+</TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=tl><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD>
+    <TD class=tc width="100%"><IMG height=28 alt="" 
+      src="filez/blank.gif" width="100%"></TD>
+    <TD class=tr><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD></TR></TBODY></TABLE>
+<TABLE width="100%" border=1 cellPadding=0 cellSpacing=0 bordercolor="#FFFFFF">
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"> <p>在这个课程上介绍的知识,可能会有错误和问题。但我只想尽我的全力去制作一个针对初学者的课程，让他们在学习感到轻松和简单。如果你对于学习OpenGL很认真，我建议你购买OpenGL Red Book(ISBN 0-201-46138-2)和OpenGL Blue Book，它们是至今为止最好的参考书。另一本我要推荐的书是OpenGL Superbible,当然你也可以选择其它的。当你在这个网站上学习时，你应该多浏览一下其它的站点，如 <a href="http://www.opengl.org/">OpenGL.org </a>. 你也可以浏览一些我提供的链接，大部分站点都是由一些非常优秀的编程人员创建的，它们很多都比我出色。我希望你能喜欢我提供给你的帮助，并且希望看到在不久的将来你能创建出你自己的程序。</p>
+      <p> <br>
+        还有重要的一点，如果你看到这些代码时觉得像以前你看到的别人的代码，请联系我。 我向你保证 ， 我所借鉴的代码要么来自于MSDN要么来自于一些为了帮助别人而创建的站点（就像我的一样）。 我从来没有有意抄袭代码 ，也将永远不会不给合适的人以信任（这里翻译有问题）。也许有一些例子表明我从一些免费网站获得代码并且不知道哪些网站从别人那里获得的，所以如果发生了 这样的事，请联系我。我会或者重写哪些代码，或者从我的工程里移除它们。多数的代码都是原创的，但是我仅仅在我完全不知道如何完成一件事时才回去借鉴代 码，并且甚至于当我确定我已经理解了那些代码之后我词啊会把它放到我的工程里。如果你在任何一课了发现错误，无论多小的错误，请通知我。</p>
+      <p><br>
+          最后一件重要的事是我的基础代码是在1997年写的，如果有什么改动的话，请留意我的网站： <br>
+      <a href="http://nehe.gamedev.net/">http://nehe.gamedev.net/</a></p></TD>
+<TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+  
+  
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=lc><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD>
+    <TD class=c width="100%"><IMG height=28 alt="" 
+      src="filez/blank.gif" width=28></TD>
+    <TD class=rc><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD></TR></TBODY></TABLE>
+    
+    
+    
+    
+    
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_01.htm">
+          <IMG 
+            class=solid alt="Lesson 1" 
+            src="../Pic/lesson01.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">1.创建一个OpenGL窗口: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158> 在这个教程里,我将教你在Windows环境中创建OpenGL程序.它将显示一个空的OpenGL窗口,可以在窗口和全屏模式下切换,按ESC退出.它是我们以后应用程序的框架. <br>
+                  <br>
+                  <span class="style9">理解OpenGL如何工作非常重要，你可以在教程的末尾下载源程序，但我强烈建议你至少读一遍教程，然后再开始编程. </span></TD>
+              </TR></TBODY>
+            </TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_02.htm">
+          <IMG 
+            class=solid alt="Lesson 2" 
+            src="../Pic/lesson02.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle> <div align="left">2.你的第一个多边形: </div></td>
+              </tr>
+              <tr> 
+                <td class=back height=158> 在第一个教程的基础上，我们添加了一个三角形和一个四边形。也许你认为这很简单，但你已经迈出了一大步，要知道任何在OpenGL中绘制的模型都会被分解为这两种简单的图形。 <br>
+                  <br>
+读完了这一课，你会学到如何在空间放置模型，并且会知道深度缓存的概念。 </td>
+              </tr>
+              </tbody>
+            </table>
+          </TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_3.htm">
+          <IMG 
+            class=solid alt="Lesson 3" 
+            src="filez/lesson03.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">3.添加颜色: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style7> 作为第二课的扩展，我将叫你如何使用颜色。你将理解两种着色模式，在左图中，三角形用的是光滑着色，四边形用的是平面着色。  注意三角形上的颜色是如何混合的。<BR><BR>
+                  颜色为OpenGlL 工程增加很多。通过理解平面着色(flat coloring)和平滑着色(smooth coloring)，你能显著的改善你的OpenGL Demo的样子。</FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_4.htm">
+          <IMG 
+            class=solid alt="Lesson 4" 
+            src="filez/lesson04.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">4.旋转: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style7> 在这一课里，我将教会你如何旋转三角形和四边形。左图中的三角形沿Y轴旋转，四边形沿着X轴旋转。 这一章将引入两个变量, rtri 被用来存储三角形的角度, rquad存储四边形的角度。<BR><BR>
+                  和容易创建一个多边形组成的场景。让这些物体动起来是整个场景变得生动起来。在后面的课程钟我将教给你如何绕屏幕上的一个点旋转物体，使得物体绕屏幕而不是它的轴转动。</FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_5.htm">
+          <IMG 
+            class=solid alt="Lesson 5" 
+            src="filez/lesson05.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">5.3D形体: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p><FONT class=text><span class="style8">既然我们已经领会到多边形，方形，色彩和旋转。现在该建立3D物体了。我将使用多边形和矩形c创建3D物体。这次我们将扩展上一章的教程，并且将三角形转换成一个彩色的棱锥，把正方形变为一个实心正方体。棱锥使用混合色，正方体每个面使用一种颜色。在3D空间创建物体可能很费时间，但是所获得的结果（收获）值得这样做。充分发挥你的想象力吧。</span></FONT><span class="style8"><FONT class=text><BR>
+                      &nbsp;</FONT></span></p>                  </TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+  
+  
+  
+  
+  
+    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" 
+      src="blank(1).gif" width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_6.htm">
+          <IMG 
+            class=solid alt="Lesson 6" 
+            src="filez/lesson06.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">6.纹理映射: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=text><span class="back style8">你想要它，它现在就在这里了，那就是 ... 纹理映射!!!在这一章我将教会你如何将一幅位图(bitmap)映射到正方体的六个面上去。我们将使用第一章的OpenGL代码来创建工程。创建一个空的窗口比修改上一课的代码更容易。<BR>
+                  你将会发现第一章的代码在对于快速创建工程来说是及其有价值的。第一章的代码为你设置好了一切，你所需要做的只是集中精力为效果编程。</span><BR>
+                  </FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_7.htm">
+          <IMG 
+            class=solid alt="Lesson 7" 
+            src="filez/lesson07.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><div align="left"><FONT class=news>7.纹理滤波,
+    
+
+     光照和键盘控制: </FONT></div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style8>好的，我希望到现在你已经理解了所有的东西，因为这是一个巨大的教程。我想教给你两个新的方法来过滤(filter)你的纹理，简单的光照，键盘控制并且还可能更多 <strong>:)</strong> .如果你对到这一课为止你所学的东西并不充满信心，那就回头复习一下。玩一下其它课程的代码，不要操之过急。最好专心把每一课学好，而不是蜻蜓点水，只知道如何把东西做出来。</FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_8.htm">
+          <IMG 
+            class=solid alt="Lesson 8" 
+            src="filez/lesson08.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><div align="left"><FONT 
+                class=news>8.混合</FONT></div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p class="back style8"><FONT style="COLOR: #ffffff" #invalid_attr_id="#000022">有理由等一下，一个来自很酷的<a href="http://www.hypercosm.com/">Hypercosm</a>的程序员伙伴问（我）他是否可以写一章关于混合的教程。第八课通常正是讲混合的，所以太巧了。这一章教程扩展了第七章。混合是一项很酷的技术 .. 我希望你们能好好享受这一章教程。这一章的作者是<FONT style="FONT-STYLE: normal; FONT-FAMILY: Tahoma, Verdana, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none" #invalid_attr_id="normal"><A 
+                  href="mailto:stanis@hypercosm.com">Tom Stanis</A></FONT></FONT>他在这制作一章上花费了很多精力，所以让他知道你觉得怎么样。混合可不是一个好讲的话题。</p>                  </TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_9.htm">
+          <IMG 
+            class=solid alt="Lesson 9" 
+            src="filez/lesson09.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><div align="left"><FONT class=news>9.在3D空间中移动位图:</FONT></div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style8>这一章覆盖了一些你们要求的主题，你想知道如何移动你在3D屏幕空间上创造的物体。你想要知道如何在屏幕上绘制一幅位图，并且位图的黑色部分不会覆盖它后面的东西。你想要简单的动画，想要更多的混合的应用，这一章将教会你所有这些。<font style="FONT-STYLE: normal; FONT-FAMILY: Tahoma, Verdana, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none" #invalid_attr_id="normal">You'll notice there's no spinning boxes（yaker:很惭愧这一句我不是很明白）。</font>前面的课程覆盖了OpenGL的基础，每一章都基于前面的内容。前面的课程涵盖了基础的OpenGL，每一课都是在前一课的基础上创建的。这一课是前面几课知识的综合，当你学习这课时，请确保你已经掌握了前面几课的知识。 </FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_10.htm">
+          <IMG 
+            class=solid alt="Lesson 10" 
+            src="filez/lesson10.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">10.加载3D世界，并在其中漫游: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p><span class="style8"><FONT class=back>你一直期待的教程来了！这一章友一个叫<a href="mailto:iam@cadvision.com">Lionel Brites</a>的伙伴制作。这一课里你讲学到如何导入一个3D世界。代码仍然使用第一章的，但是，课程页面只是解释了新的部分，包括导入3D场景，在3D世界中移动。下载VC++代码并且在你阅读教程的同时阅读代码。按[B]键控制混合，[F]键控制滤波，[L]键控制光照（但光并不随场景移动），还有[Page UP]和[Page Down]键。我希望你能喜欢Lionel对网站的贡献。我有空的时候我会让这个教程更容易学习。</FONT></span></p>                  </TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" 
+      src="blank(1).gif" 
+  width=28></TD></TR></TBODY></TABLE>
+  
+  
+  
+  
+  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_11.htm">
+          <IMG 
+            class=solid alt="Lesson 11" 
+            src="filez/lesson11.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT>11.旗帜效果                  (飘动的纹理)：</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back>这一章教程由<span class="style5">Bosco</span>带给你。他就是那个创造了很酷的小Demo: <span class="style5">worthless</span>的家伙。他喜欢每个人对他的Demo的反映，并且决定更进一步，在他的Demo的最后解释他怎么实现这么酷的效果的。这一章教程构建在第六章的代码之上。阅读完这一章之后，你将能弯曲，折叠以及操纵你自己的纹理。这绝对是个很漂亮的效果，并且比纹理固定的旗帜好得多。如果你喜欢这一章，请发邮件给<span class="style5">bosco</span>让他知道。</FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_12.htm">
+          <IMG 
+            class=solid alt="Lesson 12" 
+            src="filez/lesson12.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT style="TEXT-DECORATION: none" #invalid_attr_id="bold 13px Tahoma, Verdana, sans-serif">12.显示列表</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p>想知道如何加速你的OpenGL程序么？每次为放置一个物体在屏幕上而写很多代码让你厌烦了吧？如果是这样，这一章就是为你准备的。学习如何用OpenGL来显示列表。只用一行代码预构建和显示物体。使用预编译物体加速你的程序。不要再一次又一次写重复的代码。让显示列表为你做所有的工作吧！这一章里我们将建造Q-bert金字塔(Q-bert是一款游戏)，感谢显示列表，我们只需要用不多的几行代码。</p>                  </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_13.htm">
+          <IMG 
+            class=solid alt="Lesson 13" 
+            src="filez/lesson13.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Bitmap 
+                  Fonts:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>I think the 
+                  question I get asked most often in email is "how can I display 
+                  text on the screen using OpenGL?". You could always texture 
+                  map text&nbsp;onto your screen. Of course you have very little 
+                  control over the text, and unless you're good at blending, the 
+                  text usually ends up mixing with&nbsp;the images on the 
+                  screen. If you'd like an easy way to write the text you want 
+                  anywhere you want on the screen in any color you want, using 
+                  any of&nbsp;your computers built in fonts, then this tutorial 
+                  is definitely for you. Bitmaps font's are 2D scalable fonts, 
+                  they can not be rotated. They&nbsp;always face 
+                  forward.&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_14.htm">
+          <IMG 
+            class=solid alt="Lesson 14" 
+            src="filez/lesson14.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Outline 
+                  Fonts:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>Bitmap fonts not 
+                  good enough? Do you need control over where the fonts are on 
+                  the Z axis? Do you need 3D fonts (fonts with actual depth)? Do 
+                  you&nbsp;need wireframe fonts? If so, Outline fonts are the 
+                  perfect solution. You can move them along the Z axis, and they 
+                  resize. You can spin them&nbsp;around on an axis (something 
+                  you can't do with bitmap fonts), and because proper normals 
+                  are generated for each character, they can be lit up 
+                  with&nbsp;lighting. You can build Outline fonts using any of 
+                  the fonts installed on your computer. Definitely a nice font 
+                  to use in games and 
+        demos.&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_15.htm">
+          <IMG 
+            class=solid alt="Lesson 15" 
+            src="filez/lesson15.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Texture Mapped 
+                  Outline Fonts:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>Hopefully my last 
+                  font tutorial {grin}. This time we learn a quick and fairly 
+                  nice looking way to texture map fonts, and any other 3D object 
+                  on&nbsp;your screen. By playing around with the code, you can 
+                  create some pretty cool special effects, Everything from 
+                  normal texture mapped object to&nbsp;sphere mapped objects. In 
+                  case you don't know... Sphere mapping creates a metalic 
+                  looking object that reflects anything from a pattern to a 
+                  picture.&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_16.htm">
+          <IMG 
+            class=solid alt="Lesson 16" 
+            src="filez/lesson16.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Cool Looking 
+                  Fog:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial code 
+                  was generously donated to the site by Chris Aliotta. It based 
+                  on the code from lesson 7, that why you're seeing the famous 
+                  crate&nbsp;again :) It's a pretty short tutorial aimed at 
+                  teaching you the art of fog. You'll learn how to use 3 
+                  different fog filters, how to change the&nbsp;color of the 
+                  fog, and how to set how far into the screen the fog starts and 
+                  how far into the screen it ends. Definitely a nice effect to 
+                  know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_17.htm">
+          <IMG 
+            class=solid alt="Lesson 17" 
+            src="filez/lesson17.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>2D Texture 
+                  Font:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>The original 
+                  version of this tutorial code was written by Giuseppe D'Agata. 
+                  In this tutorial you will learn how to write any character or 
+                  phrase&nbsp;you want to the screen using texture mapped quads. 
+                  You will learn how to read one of 256 different characters 
+                  from a 256x256 texture map, and&nbsp;finally I will show you 
+                  how to place each character on the screen using pixels rather 
+                  than units. Even if you're not interested in drawing 
+                  2D&nbsp;texture mapped characters to the screen, there is lots 
+                  to learn from this tutorial. Definitely worth 
+                  reading!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_18.htm">
+          <IMG 
+            class=solid alt="Lesson 18" 
+            src="filez/lesson18.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+                class=head>Quadrics:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial code 
+                  was written by GB Schmick the wonderful site op over at <A 
+                  href="http://www.tiptup.com/">TipTup</A>. It will introduce 
+                  you to the&nbsp;wonderful world of quadrics. With quadrics you 
+                  can easily create complex objects such as spheres, discs, 
+                  cylinders and cones. These object can be&nbsp;created with 
+                  just one line of code. With some fancy math and planning it 
+                  should be possible to morph these objects from one object into 
+                  another.&nbsp;Please let GB Schmick know what you think of the 
+                  tutorial, it's always nice when visitors contribute to the 
+                  site, it benefits us all. Everyone that&nbsp;has contributed a 
+                  tutorial or project deserves credit, please let them know 
+                  their work is 
+        appreciated!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_19.htm">
+          <IMG 
+            class=solid alt="Lesson 19" 
+            src="filez/lesson19.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Particle Engine 
+                  Using Triangle Strips:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>Have you ever 
+                  wanted to create an explosion, water fountain, flaming star, 
+                  or some other cool effect in your OpenGL program, but writing 
+                  a particle&nbsp;engine was either too hard, or just too 
+                  complex? If so, this tutorial is for you. You'll learn how to 
+                  program a simple but nice looking particle&nbsp;engine. I've 
+                  thrown in a few extras like a rainbow mode, and lots of 
+                  keyboard interaction. You'll also learn how to create OpenGL 
+                  triangle strips.&nbsp;I hope you find the code both useful and 
+                  entertaining.&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_20.htm">
+          <IMG 
+            class=solid alt="Lesson 20" 
+            src="filez/lesson20.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+              class=head>Masking:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>Up until now we've 
+                  been blending our images onto the screen. Although this is 
+                  effective, and it adds our image to the scene, a transparent 
+                  object&nbsp;is not always pretty. Lets say you're making a 
+                  game and you want solid text, or an odd shaped console to pop 
+                  up. With the blending we have been&nbsp;using up until now, 
+                  the scene will shine through our objects. By combining some 
+                  fancy blending with an image mask, your text can be solid. You 
+                  can&nbsp;also place solid oddly shaped images onto the screen. 
+                  A tree with solid branches and non transparent leaves or a 
+                  window, with transparent glass and&nbsp;a solid frame. Lots of 
+                  possiblities!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_21.htm">
+          <IMG 
+            class=solid alt="Lesson 21" 
+            src="filez/lesson21.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Lines, 
+                  Antialiasing, Timing, Ortho View And Simple 
+              Sounds:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This is my first 
+                  large tutorial. In this tutorial you will learn about: Lines, 
+                  Anti-Aliasing, Orthographic Projection, Timing, Basic Sound 
+                  Effects,&nbsp;and Simple Game Logic. Hopefully there's enough 
+                  in this tutorial to keep everyone happy :) I spent 2 days 
+                  coding this tutorial, and about 2 weeks&nbsp;writing this HTML 
+                  file. If you've ever played Amidar, the game you write in this 
+                  tutorial may bring back memories. You have to fill in a 
+                  grid&nbsp;while avoiding nasty enemies. A special item appears 
+                  from time to time to help make life easier. Learn lots and 
+                  have fun doing 
+        it!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_22.htm">
+          <IMG 
+            class=solid alt="Lesson 22" 
+            src="filez/lesson22.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Bump-Mapping, 
+                  Multi-Texturing &amp; Extensions:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial code 
+                  was written by Jens Schneider. Right off the start I'd like to 
+                  point out that this is an advanced tutorial. If you're 
+                  still&nbsp;uncertain about the basics, please go back and read 
+                  the previous lessons. If you're a new GL programmer, this 
+                  lesson may be a bit much. In this&nbsp;lesson, you will modify 
+                  the code from lesson 6 to support hardware multi-texturing on 
+                  cards that support it, along with a really cool visual 
+                  effect&nbsp;called bump-mapping. Please let Jens Schneider 
+                  know what you think of the tutorial, it's always nice when 
+                  visitors contribute to the site, it&nbsp;benefits us all. 
+                  Everyone that has contributed a tutorial or project deserves 
+                  credit, please let them know their work is 
+                  appreciated!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_23.htm">
+          <IMG 
+            class=solid alt="Lesson 23" 
+            src="filez/lesson23.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Sphere Mapping 
+                  Quadrics In OpenGL:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial code 
+                  was written by GB Schmick and is based on his quadrics 
+                  tutorial (lesson 18). In lesson 15 (texture mapped fonts) I 
+                  talked a&nbsp;little bit about sphere mapping. I explained how 
+                  to auto-generate texture coordinates, and how to set up sphere 
+                  mapping, but because lesson 15 was&nbsp;fairly simple I 
+                  decided to keep the tutorial simple, leaving out alot of 
+                  details in regards to sphere mapping. Now that the lessons are 
+                  a little&nbsp;more advanced it's time to dive into the world 
+                  of sphere mapping. TipTup did an excellent job on the 
+                  tutorial, so if you appreciate his work, let&nbsp;him 
+                  know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_24.htm">
+          <IMG 
+            class=solid alt="Lesson 24" 
+            src="filez/lesson24.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Tokens, 
+                  Extensions, Scissor Testing And TGA Loading:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>In this tutorial I 
+                  will teach you how to read and parse what OpenGL extensions 
+                  are supported by your video card. I will also show you how to 
+                  use&nbsp;scissor testing to create a cool scrolling window 
+                  effect. And most importantly I will show you how to load and 
+                  use TGA (targa) image files as&nbsp;textures in projects of 
+                  your own. TGA files support the alpha channel, allowing you to 
+                  create some great blending effects, and they are easy 
+                  to&nbsp;create and work with. Not only that, by using TGA 
+                  files, we no longer depend on the glAUX library. Something I'm 
+                  sure alot of you guys 
+              will&nbsp;appreciate!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_25.htm">
+          <IMG 
+            class=solid alt="Lesson 25" 
+            src="filez/lesson25.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Morphing &amp; 
+                  Loading Objects From A File:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial code 
+                  was written by Piotr Cieslak. Learn how to load simple objects 
+                  from a text file, and morph smoothly from one object into 
+                  another.&nbsp;The effect in this tutorial has to be seen to be 
+                  appreciated. The effect taught in this demo can be used to 
+                  animated objects similar to the&nbsp;swimming dolphin in my 
+                  Dolphin demo, or to twist and bend objects into many different 
+                  shapes. You can also modify the code to use lines or 
+                  solid&nbsp;polygons. Great effect! Hope you appreciate Piotr's 
+                  work!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_26.htm">
+          <IMG 
+            class=solid alt="Lesson 26" 
+            src="filez/lesson26.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Clipping &amp; 
+                  Reflections Using The Stencil Buffer:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial was 
+                  written by Banu Cosmin. It demonstrates how to create 
+                  extremely realistic reflections using the stencil buffer, 
+                  clipping, and&nbsp;multi-texturing. This tutorial is more 
+                  advanced than previous lessons, so please make sure you've 
+                  read the previous lessons before jumping in.&nbsp;It's also 
+                  important to note this tutorial will not run on video cards 
+                  that do not support the stencil buffer (voodoo 1, 2, perhaps 
+                  more). If you&nbsp;appreciate Banu's work, let him 
+                  know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_27.htm">
+          <IMG 
+            class=solid alt="Lesson 27" 
+            src="filez/lesson27.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+              class=news>26.阴影</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This is an advanced 
+                  tutorial. Before you decide to try out shadows, make sure you 
+                  completely understand the base code, and make sure you 
+                  are&nbsp;familiar with the stencil buffer. This tutorial was 
+                  made possible by both Banu Cosmin &amp; Brett Porter. Banu 
+                  wrote the original code. Brett&nbsp;cleaned the code up, 
+                  combined it into one file, and wrote the HTML for the 
+                  tutorial. The effect is amazing! Shadows that actual wrap 
+                  around&nbsp;objects, and distort on the walls and floor. 
+                  Thanks to Banu and Brett for their hard work, this is truely a 
+                  great 
+      tutorial!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_28.htm">
+          <IMG 
+            class=solid alt="Lesson 28" 
+            src="filez/lesson28.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Bezier Patches / 
+                  Fullscreen Fix:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>David Nikdel is the 
+                  man behind this super cool tutorial. Learn how to create 
+                  bezier patches. Learn how to alter a surface by modifying 
+                  control&nbsp;points. The surface being altered is fully 
+                  texture mapped, the animation is smooth! Left and Right arrow 
+                  keys rotate the object while the Up and&nbsp;Down arrows raise 
+                  and lower the resolution. This tutorial also eliminates the 
+                  fullscreen problems a few of you have been having! Thanks to 
+                  David&nbsp;for modifying the code! If you appreciate his work, 
+                  let him 
+      know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_29.htm">
+          <IMG 
+            class=solid alt="Lesson 29" 
+            src="filez/lesson29.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Blitter Function, 
+                  RAW Texture Loading:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial was 
+                  written by Andreas Löffler. In this tutorial you will learn 
+                  how to load .RAW image files. You will also learn how to write 
+                  your&nbsp;own blitter routine to modify textures after they 
+                  have been loaded. You can copy sections of the first texture 
+                  into a second texture, you can blend&nbsp;textures together, 
+                  and you can stretch textures. The same routine can be modified 
+                  to create realtime plasma and other cool effects! If you 
+                  enjoy&nbsp;the tutorial let Andreas 
+              know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_30.htm">
+          <IMG 
+            class=solid alt="Lesson 30" 
+            src="filez/lesson30.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Collision 
+                  Detection:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>The tutorial you 
+                  have all been waiting for. This amazing tutorial was written 
+                  by Dimitrios Christopoulos. In this tutorial you will learn 
+                  the&nbsp;basics of collision detection, collision response, 
+                  and physically based modelling effects. This tutorial 
+                  concentrates more on how collision&nbsp;detection works than 
+                  on the actual code, although all of the important code is 
+                  explained. It's important to note, this is an ADVANCED 
+                  tutorial.&nbsp;Don't expect to read through the tutorial once 
+                  and understand everything about collision detection. It's a 
+                  complex topic, and this tutorial will&nbsp;only get you 
+                  started.&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_31.htm">
+          <IMG 
+            class=solid alt="Lesson 31" 
+            src="filez/lesson31.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Model 
+                  Loading:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>Brett Porter is the 
+                  author of this tutorial. What can I say... Another incredible 
+                  tutorial! This tutorial will teach you how to load in and 
+                  display&nbsp;texture mapped Milkshape3D models. This tutorial 
+                  is quite advanced so make sure you understand the previous 
+                  lessons before you attempt the code in&nbsp;this tutorial. It 
+                  sounds as though Brett is planning a future tutorial on 
+                  Skeletal Animation so if you enjoy this tutorial, show him 
+                  your support!&nbsp;Email him and let him know you appreciate 
+                  his work!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_32.htm">
+          <IMG 
+            class=solid alt="Lesson 32" 
+            src="filez/lesson32.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Picking, Alpha 
+                  Blending, Alpha Testing, Sorting:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial 
+                  attempts to answer a few of the questions I'm asked on a daily 
+                  basis. You wanted to know how to tell if you have clicked on 
+                  an object&nbsp;with your mouse (picking). You wanted to know 
+                  how to draw objects to the screen without a specific color 
+                  showing up (alpha blending or alpha&nbsp;testing). You wanted 
+                  to know how to sort objects so they appear properly when 
+                  blending in enabled (sorting). This tutorial is a complete 
+                  game and&nbsp;is considered advanced. Make sure you have a 
+                  good undestanding of OpenGL before you jump into the 
+                  code.&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_33.htm">
+          <IMG 
+            class=solid alt="Lesson 33" 
+            src="filez/lesson33.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Loading 
+                  Compressed And Uncompressed TGA's:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>In Lesson 25 I 
+                  showed you a quick way to load uncompressed 24/32 bit TGA 
+                  images. Very useful if you need to use an alpha channel and 
+                  you don't mind&nbsp;the large size of an uncompressed TGA! In 
+                  this tutorial, you will learn how to load both uncompressed 
+                  and RLE compressed TGA images. The TGA&nbsp;Loading code and 
+                  header files are seperate from the main project, and can 
+                  easily be used in projects of your own! The demo is included 
+                  only as an&nbsp;example! Don't expect eye popping 
+                  graphics!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_34.htm">
+          <IMG 
+            class=solid alt="Lesson 34" 
+            src="filez/lesson34.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Beautiful 
+                  Landscapes By Means Of Height Mapping:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>Want to create 
+                  beautiful landscapes smooth shaded landscapes using nothing 
+                  more than a single texture? If so, this tutorial will teach 
+                  you how to&nbsp;convert a 2D greyscale height map image into a 
+                  full blown 3D landscape. I also talk a little about gluLookAt, 
+                  a command that seems to have a few of&nbsp;you baffled. The 
+                  code for this tutorial was written by Ben Humphrey. If you 
+                  enjoy this tutorial or just the code, please let Ben know! If 
+                  you want&nbsp;to see more lessons, support those that donate 
+                  code to the site. Little work on your part, and it means alot 
+                  to the 
+      authors!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_35.htm">
+          <IMG 
+            class=solid alt="Lesson 35" 
+            src="filez/lesson35.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Playing AVI Files 
+                  In OpenGL:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial will 
+                  teach you how to play AVI files in OpenGL. Play them 
+                  fullscreen, in a window, on the side of a cube, sphere, 
+                  cylinder, etc.&nbsp;Create a billboard with full motion video 
+                  playing on it! The tutorial also shows you how to use sphere 
+                  mapping to create a cool looking live&nbsp;environment mapping 
+                  effect. Thanks to Fredster for the AVI animation, Maxwell 
+                  Sayles for the coding advice, and both Jonathan Nix and John 
+                  F.&nbsp;McGowan, Ph.D. for their great AVI articles / 
+                  documents. Have fun with the tutorial, if you find mistakes in 
+                  the tutorial, please let me 
+            know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_36.htm">
+          <IMG 
+            class=solid alt="Lesson 36" 
+            src="filez/lesson36.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Radial Blur &amp; 
+                  Rendering To A Texture:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial was 
+                  written by Dario Corno, also known as rIO of SpinningKids. The 
+                  code / html commenting and a rewrite of the tutorial was done 
+                  by&nbsp;me (NeHe). This tutorial will show you how to create 
+                  an extremely impressive Radial Blur effect. It should run fast 
+                  on just about every type of&nbsp;hardware, and does not 
+                  require the use of extensions. This tutorial will also teach 
+                  you how to render to a texture using the off-screen buffer. 
+                  A&nbsp;topic I'm sure many of you are interested in! It's 
+                  important to note that there is very little explanation of the 
+                  GL commands. By now you should&nbsp;know what they do! If you 
+                  find any mistakes in this tutorial let me 
+              know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_37.htm">
+          <IMG 
+            class=solid alt="Lesson 37" 
+            src="filez/lesson37.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+                  class=head>Cel-Shading:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial was 
+                  written by Sami "MENTAL" Hamlaoui. Orignally this code was 
+                  published as an article on GameDev.net. After the article 
+                  was&nbsp;published, Sami was flooded with request from people 
+                  interested in getting their hands on the source code. Sami 
+                  hacked together some code using the&nbsp;NeHeGL basecode, 
+                  wrote up a rough .TXT format tutorial, and emailed me the 
+                  entire package. Great news for all the NeHe Productions 
+                  visitors!!! This&nbsp;tutorial will teach you Cel-Shading. A 
+                  very cool effect that makes images look like cartoons! If you 
+                  enjoy this tutorial email the author and let&nbsp;him 
+                  know!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_38.htm">
+          <IMG 
+            class=solid alt="Lesson 38" 
+            src="filez/lesson38.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Loading Textures 
+                  From A Resource File &amp; Texturing Triangles:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>I wrote this 
+                  tutorial for all those people that have emailed me asking "How 
+                  do I load textures from a resource file so that all the 
+                  textures are&nbsp;stored in the .exe file?" and for those 
+                  people that have said "I know how to texture map a quad but 
+                  how in the heck do I texture map a&nbsp;triangle?". The 
+                  tutorial itself is not all that fancy, and it's definitely not 
+                  that advanced, but the content is good to know. If 
+                  nothing&nbsp;else, you will learn how to hide your precious 
+                  textures. Making it difficult for a novice to steal them 
+                  :)&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_39.htm">
+          <IMG 
+            class=solid alt="Lesson 39" 
+            src="filez/lesson39.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Introduction to 
+                  Physical Simulations:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial was 
+                  written by Erkin Tunca. It demonstrates motion under gravity, 
+                  a mass with constant velocity, and a mass connected to a 
+                  spring.&nbsp;An excellent introduction to physical simulation 
+                  in projects of your own. The code is based on the latest 
+                  NeHeGL code and the bitmap font code from&nbsp;lesson 14. It 
+                  features keyboard interaction and heavy commenting. If you 
+                  enjoy this tutorial email the author and let him know. A 
+                  second more&nbsp;advanced Physical Simulation tut is already 
+                  in the 
+      works!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_40.htm">
+          <IMG 
+            class=solid alt="Lesson 40" 
+            src="filez/lesson40.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Rope 
+                  Physics:</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial was 
+                  written by Erkin Tunca and is part two of his two part series 
+                  on physical simulations. Control a rope with keys on your 
+                  keyboard.&nbsp;Watch as the rope swings and the tail drags 
+                  across the ground. A very cool effect! The code is based on 
+                  the latest NeHeGL code and features&nbsp;keyboard interaction 
+                  and heavy commenting. If you enjoy this tutorial email the 
+                  author and let him know. He did an amazing job writing both 
+                  tuts,&nbsp;and released this tut just a few weeks after the 
+                  first.&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+
+
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" 
+      src="blank(1).gif" width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_41.htm">
+          <IMG 
+            class=solid alt="Lesson 41" 
+            src="filez/lesson41.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>Volumetric Fog 
+                  &amp; IPicture Image Loading</FONT></TD></TR>
+              <TR>
+                <TD class=back height=158><FONT class=text>This tutorial will 
+                  introduce you to the world of extensions. In this tutorial you 
+                  will learn how to create Volumetric Fog using the glFogCoordf 
+                  Extension.&nbsp;You will also learn how the IPicture code 
+                  works, and how to use it in projects of your own. Because of 
+                  very limited free time, the demo is not all that&nbsp;complex. 
+                  The only keys used in this demo are the up and down arrow 
+                  keys. The only effect displayed in this demo is volumetric 
+                  fog. Keeping that in&nbsp;mind, the fog effect is extremely 
+                  cool, and the tutorial is very detailed. After reading through 
+                  this tutorial you should have no problem 
+                  adding&nbsp;volumetric fog to demos of your own. It's 
+                  important to note that this tutorial only runs on video cards 
+                  that support the EXT_fog_coord extension. If&nbsp;you are not 
+                  sure if you care supports this extension, download lesson 24 
+                  and scroll through the list of supported extensions. Hopefully 
+                  someone will&nbsp;find this code 
+              useful!&nbsp;</FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" 
+      src="blank(1).gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l height="1425"><IMG height=28 alt="" 
+      src="blank(1).gif" width=28></TD>
+    <TD class=back3 vAlign=top width="100%" height="1425"> 
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_42.htm"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="filez/lesson42.jpg" width="240" height="180"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>Multiple Viewports</b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158><font class="text">This tutorial was 
+                  written for all those people that have emailed me wanting to 
+                  know how to display multiple views on a single screen. This 
+                  tutorial&nbsp;will teach you how to set up multiple viewports, 
+                  how to display both ortho and perspective views on the same 
+                  screen, and how to display a variety of&nbsp;effects with each 
+                  effect running in it's own viewport. As an added bonus, you 
+                  will learn how to get the size of your OpenGL window, you will 
+                  learn&nbsp;a very fast way to update a texture without rebuilding 
+                  it. You will learn how to use GL_COLOR_MATERIAL to color a texture 
+                  and you will get to play&nbsp;around with my maze code :) I 
+                  hope you appreciate the time I put into making this tutorial. 
+                  It a simple idea, but writing the tutorial and then&nbsp;the 
+                  HTML was very time consuming!&nbsp;</font></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_43.htm"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="filez/lesson43.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><b><font class="text"><b>FreeType 
+                  Fonts in OpenGL</b></font></b></td>
+              </tr>
+              <tr> 
+                <td class=back height=158><font size="3">Recently many of you 
+                  have written to me asking how to create an anti-aliased font. 
+                  Bitmap fonts are usually blocky looking when zoomed, and outline 
+                  fonts eat up too much CPU. Thanks to Sven Olsen, you can now 
+                  create extremely nice looking fonts using the FreeType library. 
+                  By using the FreeType library you can create anti-aliased text. 
+                  The text is easy to rotate and works well with OpenGL's picking 
+                  functions. The example program is based on lesson 13, and uses 
+                  the older NeHe basecode. The example is not all that fancy, 
+                  but after running it, you will see a clear difference between 
+                  the older WGL Bitmap Font and the new FreeType Font! If you 
+                  enjoy this tutorial, please email the author and let him know! 
+                  </font></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_44.htm"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="filez/lesson44.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>3D Lens Flare 
+                  With Occlusion Testing</b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158><font size="3">Learn how to do lens 
+                  flares by extending a glCamera class. If you look at a lens 
+                  flare you will notice that they all share one thing in common. 
+                  They all seem to move through the center of the screen. With 
+                  this in mind you could actually just throw out the z coordinate 
+                  and make your flares all 2D. The only problem with this approach 
+                  is without a z coordinate how do you find out if the camera 
+                  is looking at the light source or not? In this tutorial we will 
+                  be making 3D lens flares so get ready for a little bit of math. 
+                  Occlusion test by Dario Corno a.k.a. rIO of Spinning Kids.</font></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_45.htm"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="filez/lesson45.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>Vertex Buffer 
+                  Objects</b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158><font size="3">When you need raw polygon-pushing 
+                  power, you can always utilize the optimizations provided by 
+                  OpenGL. Vertex Arrays are one good way to do that. For even 
+                  more boost you can use a recent extension to graphics cards 
+                  called 'Vertex Buffer Objects'. The extension, ARB_vertex_buffer_object, 
+                  works just like vertex arrays, except that it loads the data 
+                  into the graphics card's high-performance memory, significantly 
+                  lowering rendering time. Because the extension is relatively 
+                  new, not all cards will support it. This awesome tutorial was 
+                  written by Paul Frazee. If you enjoy the tutorial please e-mail 
+                  him and let him know. </font></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_46.htm"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="filez/lesson46.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>Fullscreen AntiAliasing</b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158><font size="3">Need a tutorial that 
+                  will make your OpenGL applications look better? A big problem 
+                  we all run into is aliasing. That is, the square edged &quot;jaggies&quot; 
+                  that exist on diagonal lines in relation to the square pixels 
+                  that exist on your screen. In this tutorial you will use Anti-Aliasing 
+                  to smudge those &quot;jaggies&quot; in order to create a smoother 
+                  edge for objects. We achieve this through &quot;Multisampling&quot;. 
+                  Fullscreen AntiAliasing is something that non-realtime rendering 
+                  programs have always had an advantage in. However, with current 
+                  hardware, we're able to pull off the same effect real time. 
+                  The ARB_MULTISAMPLE extension allows us to do this. Like any 
+                  other Extension based tutorial, if your card does not support 
+                  the extension used, the effect will not work on your machine 
+                  or the program may fail to run. This tutorial was written by 
+                  Colt &quot;MainRoach&quot; McAnlis. If you enjoy it, let him 
+                  know! </font></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_47.htm"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="filez/lesson47.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>CG Vertex Shader</b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158><font size="3">Using vertex and fragment 
+                  (or pixel) shaders to do some rendering dirty work can have 
+                  numerous benefits. The most obvious is the movement of some 
+                  of the graphics related CPU load off the CPU and onto the GPU. 
+                  Cg provides a (reasonably) simple language for writing very 
+                  powerful shaders. This tutorial has multiple aims. The first 
+                  is to present a simple vertex shader that actually does something, 
+                  without introducing unnecessary lighting etc… The second is 
+                  to provide the basic mechanism for running the vertex shader 
+                  with visible results using OpenGL. As such, it is aimed at the 
+                  beginner interested in Cg who has a little experience in OpenGL. 
+                  This tutorial was written by Owen Bourne. If you enjoy it, please 
+                  take the time to email him and let him know!</font></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_48.htm"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="filez/lesson48.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>ArcBall Rotation</b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158><font size="3">Wouldn’t it be great 
+                  to rotate your model at will, just by using the mouse? With 
+                  an ArcBall you can do just that. In this tutorial Terence J. 
+                  Grant will touch on his implementation and considerations for 
+                  adding ArcBall rotation to your own projects. His implementation 
+                  of the ArcBall class is based on Bretton Wade’s, which is based 
+                  on Ken Shoemake’s from the Graphic Gems series of books. However, 
+                  his version has some bug fixing and optimizations. The example 
+                  code was originally based on lesson 5. It has been spruced up 
+                  a bit, and now includes code to render a torus, complete with 
+                  normals. If you enjoy this tutorial send Terence an email and 
+                  let him know! </font></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </TD>
+    <TD class=r height="1425"><IMG height=28 alt="" 
+      src="blank(1).gif" 
+  width=28></TD>
+  </TR></TBODY></TABLE>
+
+
+
+
+
+
+
+  
+  
+  
+  
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=lc><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD>
+    <TD class=c width="100%"><IMG height=28 alt="" 
+      src="filez/blank.gif" width=28></TD>
+    <TD class=rc><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="filez/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR>          </TR></TBODY></TABLE>
+      </FONT>
+      <TABLE width="100%" border=0>
+        <TBODY>
+          <TR>
+            <TD align=middle><p align="left" class="back">我不是一个编程大牛。我只是一个普通的程序员，每天学习关于OpengGL的新东西。我不宣称懂得一切，也不保证代码没有错误。我已经尽力去消除所有的bug。但是这不是一个简单活，当你阅读课程的时候请记住这一点。</p></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <FONT class=text>
+      <TABLE width="100%" border=0>
+        <TBODY>
+          <TR>
+            <TD align=middle><p>&nbsp;</p>            </TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <TABLE width="100%" border=0>
+          <TBODY>
+          <TR>
+            <TD align=middle><strong><A href="http://nehe.gamedev.net/" 
+            target=_top><FONT class=link><FONT size=+1>返回nehe的网站!</FONT></FONT></A></strong></TD>
+          </TR>
+          </TBODY>
+      </TABLE>
+      </FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="filez/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=bl><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD>
+    <TD class=bc width="100%"><IMG height=28 alt="" 
+      src="filez/blank.gif" width=28></TD>
+    <TD class=br><IMG height=28 alt="" src="filez/blank.gif" 
+    width=28></TD></TR></TBODY></TABLE></BODY></HTML><br>
+<table width="100%" cellspacing="0" cellpadding="0"
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color=white; border-top: 1px solid gray;"> 
+<a href="http://www.zipghost.com/" target="_blank" style="font-family: Tahoma, Verdana;
+ font-size: 11px; text-decoration: none;">The CHM file was converted to HTM by Trial version of <b>ChmD<!--57-->ecompiler</b>.</a>
+</TD>
+</TR><tr>
+<td align="right" style="background-color=white; "> 
+<a href="http://www.etextwizard.com/download/cd/cdsetup.exe" target="_blank" style="font-family: Tahoma, Verdana;
+ font-size: 11px; text-decoration: none;">Download <b>ChmDec<!--57-->ompiler</b> at: http://www.zipghost.com</a>
+</TD></tr></table>

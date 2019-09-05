@@ -1,0 +1,1120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0043)http://nehe.gamedev.net/lesson.asp?index=01 -->
+<HTML><HEAD><TITLE>NeHe Productions: OpenGL Lessons</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="Jeff Molofee" name=author>
+<META content="OpenGL Tutorials, Demos, Games and More..." name=description>
+<META content="opengl, tutorial, article, demo, game, blend, texturemap, lighting, contest, 3D" name=keywords>
+<META content="Microsoft FrontPage 5.0" name=GENERATOR>
+<LINK href="rgb.css" type=text/css rel=stylesheet>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: "宋体-方正超大字符集", "宋体", "华文中宋", "微软雅黑", "新宋体";
+	font-weight: bold;
+	font-size: medium;
+}
+.style2 {LINE-HEIGHT: normal; FONT-FAMILY: Tahoma, Verdana, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none; font-size: 12px;}
+.style3 {font-family: Tahoma, Verdana, sans-serif}
+.style4 {font-family: Tahoma, Verdana, sans-serif; font-weight: bold; font-size: medium; }
+.style5 {color: #bbccff}
+.style8 {font-size: medium}
+.style9 {font-size: 18px}
+.style10 {font-family: "宋体-方正超大字符集", "宋体", "华文中宋", "微软雅黑", "新宋体"; font-weight: bold; font-size: 18px; }
+-->
+</style>
+</HEAD>
+<BODY text=white vLink=#aaccff link=#aaccff bgColor=black>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=lc><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD>
+    <TD class=c width="100%"><IMG height=28 alt="" 
+      src="./../Pic/blank.gif" width=28></TD>
+    <TD class=rc><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD></TR></TBODY>
+</TABLE>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_01.htm" target="_self">
+          <IMG 
+            src="./../Pic/lesson01.jpg" alt="Lesson 1" width="240" height="180" border="0" 
+            class=solid></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">1.创建一个OpenGL窗口: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158> 在这个教程里,我将教你在Windows环境中创建OpenGL程序.它将显示一个空的OpenGL窗口,可以在窗口和全屏模式下切换,按ESC退出.它是我们以后应用程序的框架. <br>
+                  <span class="style9">理解OpenGL如何工作非常重要，你可以在教程的末尾下载源程序，但我强烈建议你至少读一遍教程，然后再开始编程. </span></TD>
+              </TR></TBODY>
+            </TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_02.htm" target="_self">
+          <IMG 
+            src="./../Pic/lesson02.jpg" alt="Lesson 2" width="240" height="180" border="0" 
+            class=solid></a></TD>
+          <TD class=back2 vAlign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle> <div align="left">2.你的第一个多边形: </div></td>
+              </tr>
+              <tr> 
+                <td class=back height=158> 在第一个教程的基础上，我们添加了一个三角形和一个四边形。也许你认为这很简单，但你已经迈出了一大步，要知道任何在OpenGL中绘制的模型都会被分解为这两种简单的图形。 <br>
+                  <br>
+读完了这一课，你会学到如何在空间放置模型，并且会知道深度缓存的概念。 </td>
+              </tr>
+              </tbody>
+            </table>
+          </TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_03.htm" target="_self">
+          <IMG 
+            src="./../Pic/lesson03.jpg" alt="Lesson 3" width="240" height="180" border="0" 
+            class=solid></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">3.添加颜色: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style7> 作为第二课的扩展，我将叫你如何使用颜色。你将理解两种着色模式，在左图中，三角形用的是光滑着色，四边形用的是平面着色。  注意三角形上的颜色是如何混合的。<BR><BR>
+                  颜色为OpenGlL 工程增加很多。通过理解平面着色(flat coloring)和平滑着色(smooth coloring)，你能显著的改善你的OpenGL Demo的样子。</FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_04.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 4" 
+            src="./../Pic/lesson04.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">4.旋转: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style7> 在这一课里，我将教会你如何旋转三角形和四边形。左图中的三角形沿Y轴旋转，四边形沿着X轴旋转。 这一章将引入两个变量, rtri 被用来存储三角形的角度, rquad存储四边形的角度。<BR><BR>
+                  和容易创建一个多边形组成的场景。让这些物体动起来是整个场景变得生动起来。在后面的课程钟我将教给你如何绕屏幕上的一个点旋转物体，使得物体绕屏幕而不是它的轴转动。</FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_05.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 5"
+            src="./../Pic/lesson05.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">5.3D形体: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p><FONT class=text><span class="style8">既然我们已经领会到多边形，方形，色彩和旋转。现在该建立3D物体了。我将使用多边形和矩形c创建3D物体。这次我们将扩展上一章的教程，并且将三角形转换成一个彩色的棱锥，把正方形变为一个实心正方体。棱锥使用混合色，正方体每个面使用一种颜色。在3D空间创建物体可能很费时间，但是所获得的结果（收获）值得这样做。充分发挥你的想象力吧。</span></FONT><span class="style8"><FONT class=text><BR>
+                      &nbsp;</FONT></span></p>                  </TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+  
+  
+  
+  
+  
+    <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" 
+      src="../Pic/blank(1).gif" width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_06.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 6" 
+            src="./../Pic/lesson06.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">6.纹理映射: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=text><span class="back style8">你想要它，它现在就在这里了，那就是 ... 纹理映射!!!在这一章我将教会你如何将一幅位图(bitmap)映射到正方体的六个面上去。我们将使用第一章的OpenGL代码来创建工程。创建一个空的窗口比修改上一课的代码更容易。<BR>
+                  你将会发现第一章的代码在对于快速创建工程来说是及其有价值的。第一章的代码为你设置好了一切，你所需要做的只是集中精力为效果编程。</span><BR>
+                  </FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_07.htm"  target="_self">
+          <IMG 
+            class=solid alt="Lesson 7" 
+            src="./../Pic/lesson07.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><div align="left"><FONT class=news>7.纹理滤波,
+    
+
+     光照和键盘控制: </FONT></div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style8>好的，我希望到现在你已经理解了所有的东西，因为这是一个巨大的教程。我想教给你两个新的方法来过滤(filter)你的纹理，简单的光照，键盘控制并且还可能更多 <strong>:)</strong> .如果你对到这一课为止你所学的东西并不充满信心，那就回头复习一下。玩一下其它课程的代码，不要操之过急。最好专心把每一课学好，而不是蜻蜓点水，只知道如何把东西做出来。</FONT></TD>
+              </TR></TBODY></TABLE>
+            <span class="r"><img height=28 alt="" 
+      src="../Pic/blank(1).gif" 
+  width=28></span></TD>
+        </TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_08.htm"  target="_self">
+          <IMG 
+            class=solid alt="Lesson 8" 
+            src="./../Pic/lesson08.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><div align="left"><FONT 
+                class=news>8.混合</FONT></div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p class="back style8"><FONT style="COLOR: #ffffff" #invalid_attr_id="#000022">有理由等一下，一个来自很酷的<a href="http://www.hypercosm.com/">Hypercosm</a>的程序员伙伴问（我）他是否可以写一章关于混合的教程。第八课通常正是讲混合的，所以太巧了。这一章教程扩展了第七章。混合是一项很酷的技术 .. 我希望你们能好好享受这一章教程。这一章的作者是<FONT style="FONT-STYLE: normal; FONT-FAMILY: Tahoma, Verdana, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none" #invalid_attr_id="normal"><A 
+                  href="mailto:stanis@hypercosm.com">Tom Stanis</A></FONT></FONT>他在这制作一章上花费了很多精力，所以让他知道你觉得怎么样。混合可不是一个好讲的话题。</p>                  </TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_09.htm"  target="_self">
+          <IMG 
+            class=solid alt="Lesson 9" 
+            src="./../Pic/lesson09.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><div align="left"><FONT class=news>9.在3D空间中移动位图:</FONT></div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back style8>这一章覆盖了一些你们要求的主题，你想知道如何移动你在3D屏幕空间上创造的物体。你想要知道如何在屏幕上绘制一幅位图，并且位图的黑色部分不会覆盖它后面的东西。你想要简单的动画，想要更多的混合的应用，这一章将教会你所有这些。<font style="FONT-STYLE: normal; FONT-FAMILY: Tahoma, Verdana, sans-serif; FONT-VARIANT: normal; TEXT-DECORATION: none" #invalid_attr_id="normal">You'll notice there's no spinning boxes（yaker:很惭愧这一句我不是很明白）。</font>前面的课程覆盖了OpenGL的基础，每一章都基于前面的内容。前面的课程涵盖了基础的OpenGL，每一课都是在前一课的基础上创建的。这一课是前面几课知识的综合，当你学习这课时，请确保你已经掌握了前面几课的知识。 </FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_10.htm"  target="_self">
+          <IMG 
+            class=solid alt="Lesson 10" 
+            src="./../Pic/lesson10.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle> <div align="left">10.加载3D世界，并在其中漫游: </div></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p><span class="style8"><FONT class=back>你一直期待的教程来了！这一章友一个叫<a href="mailto:iam@cadvision.com">Lionel Brites</a>的伙伴制作。这一课里你讲学到如何导入一个3D世界。代码仍然使用第一章的，但是，课程页面只是解释了新的部分，包括导入3D场景，在3D世界中移动。下载VC++代码并且在你阅读教程的同时阅读代码。按[B]键控制混合，[F]键控制滤波，[L]键控制光照（但光并不随场景移动），还有[Page UP]和[Page Down]键。我希望你能喜欢Lionel对网站的贡献。我有空的时候我会让这个教程更容易学习。</FONT></span></p>                  </TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r>&nbsp;</TD>
+  </TR></TBODY></TABLE>
+  
+  
+  
+  
+  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_11.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 11" 
+            src="./../Pic/lesson11.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT>11.旗帜效果                  (飘动的纹理)：</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><FONT class=back>这一章教程由<span class="style5">Bosco</span>带给你。他就是那个创造了很酷的小Demo: <span class="style5">worthless</span>的家伙。他喜欢每个人对他的Demo的反映，并且决定更进一步，在他的Demo的最后解释他怎么实现这么酷的效果的。这一章教程构建在第六章的代码之上。阅读完这一章之后，你将能弯曲，折叠以及操纵你自己的纹理。这绝对是个很漂亮的效果，并且比纹理固定的旗帜好得多。如果你喜欢这一章，请发邮件给<span class="style5">bosco</span>让他知道。</FONT></TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_12.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 12" 
+            src="./../Pic/lesson12.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT style="TEXT-DECORATION: none" #invalid_attr_id="bold 13px Tahoma, Verdana, sans-serif">12.显示列表</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158><p>想知道如何加速你的OpenGL程序么？每次为放置一个物体在屏幕上而写很多代码让你厌烦了吧？如果是这样，这一章就是为你准备的。学习如何用OpenGL来显示列表。只用一行代码预构建和显示物体。使用预编译物体加速你的程序。不要再一次又一次写重复的代码。让显示列表为你做所有的工作吧！这一章里我们将建造Q-bert金字塔(Q-bert是一款游戏)，感谢显示列表，我们只需要用不多的几行代码。</p>                  </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_13.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 13" 
+            src="./../Pic/lesson13.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>13.位图字体</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这一课我们将创建一些基于2D图像的字体，它们可以缩放，但不能旋转，并且总是面向前方，但作为基本的显示来说，我想已经够了。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_14.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 14" 
+            src="./../Pic/lesson14.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>14.图像字体</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>在一课我们将教你绘制3D的图形字体，它们可像一般的3D模型一样被变换。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_15.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 15" 
+            src="./../Pic/lesson15.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle>15.图形字体的纹理映射:</TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这一课，我们将在上一课的基础上创建带有纹理的字体，它真的很简单。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_16.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 16" 
+            src="./../Pic/lesson16.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>16.看起来很酷的雾</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这一课是基于第7课的代码的，你将学会三种不同的雾的计算方法，以及怎样设置雾的颜色和雾的范围。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_17.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 17" 
+            src="./../Pic/lesson17.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>17.2D 图像文字</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>在这一课中，你将学会如何使用四边形纹理贴图把文字显示在屏幕上。你将学会如何把256个不同的文字从一个256x256的纹理图像中分别提取出来，并为每一个文字创建一个显示列表，接着创建一个输出函数来创建任意你希望的文字。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_18.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 18" 
+            src="./../Pic/lesson18.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+                class=head>18.二次几何体</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>利用二次几何体，你可以很容易的创建球，圆盘，圆柱和圆锥。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_19.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 19" 
+            src="./../Pic/lesson19.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>19.粒子系统</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>你是否希望创建爆炸，喷泉，流星之类的效果。这一课将告诉你如何创建一个简单的例子系统，并用它来创建一种喷射的效果。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_20.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 20" 
+            src="./../Pic/lesson20.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+              class=head>20.蒙板</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>到目前为止你已经学会如何使用alpha混合，把一个透明物体渲染到屏幕上了，但有的使用它看起来并不是那么的复合你的心意。使用蒙板技术，将会按照你蒙板的位置精确的绘制。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_21.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 21" 
+            src="./../Pic/lesson21.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>21.线，反走样，计时，正投影和简单的声音</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这是我第一个大的教程，它将包括线，反走样，计时，正投影和简单的声音。希望这一课中的东西能让每个人感到高兴。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_22.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 22" 
+            src="./../Pic/lesson22.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>22.凹凸映射，多重纹理扩展</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这是一课高级教程，请确信你对基本知识已经非常了解了。这一课是基于第六课的代码的，它将建立一个非常酷的立体纹理效果。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_23.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 23" 
+            src="./../Pic/lesson23.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>23.球面映射</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这一个将教会你如何把环境纹理包裹在你的3D模型上，让它看起来象反射了周围的场景一样。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_24.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 24" 
+            src="./../Pic/lesson24.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>24.符号，扩展，剪裁和TGA图像文件的加载</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>在这一课里，你将学会如何读取你显卡支持的OpenGL的扩展，并在你指定的剪裁区域把它显示出来。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_25.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 25" 
+            src="./../Pic/lesson25.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>25.变形和从文件中加载3D物体</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>在这一课中，你将学会如何从文件加载3D模型，并且平滑的从一个模型变换为另一个模型。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_26.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 26" 
+            src="./../Pic/lesson26.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>26.剪裁平面，蒙板缓存和反射</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>在这一课中你将学会如何创建镜面显示效果，它使用剪裁平面，蒙板缓存等OpenGL中一些高级的技巧。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_27.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 27" 
+            src="./../Pic/lesson27.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+              class=head>27.阴影</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这是一个高级的主题，请确信你已经熟练的掌握了基本的OpenGL，并熟悉蒙板缓存。当然它会给你留下深刻的印象的。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_28.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 28" 
+            src="./../Pic/lesson28.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>28.贝塞尔曲面</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这是一课关于数学运算的，没有别的内容了。来，有信心就看看它吧。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_29.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 29" 
+            src="./../Pic/lesson29.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>29.Blitter 函数</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>类似于DirectDraw的blit函数，过时的技术，我们有实现了它。它非常的简单，就是把一块纹理贴到另一块纹理上。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_30.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 30" 
+            src="./../Pic/lesson30.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>30.碰撞检测</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这是一课激动的教程，你也许等待它多时了。你将学会碰撞剪裁，物理模拟太多的东西，慢慢期待吧。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_31.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 31" 
+            src="./../Pic/lesson31.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>31.模型加载</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>你知道大名鼎鼎的Milkshape3D建模软件么，我们将加载它的模型，当然你可以加载任何你认为不错的模型。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_32.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 32" 
+            src="./../Pic/lesson32.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>32.拾取, Alpha混合, Alpha测试, 排序</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这又是一个小游戏，交给的东西会很多，慢慢体会吧</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_33.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 33" 
+            src="./../Pic/lesson33.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>33.加载压缩和未压缩的TGA文件</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>在这一课里，你将学会如何加载压缩和为压缩的TGA文件，由于它使用RLE压缩，所以非常的简单，你能很快地熟悉它的。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_34.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 34" 
+            src="./../Pic/lesson34.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>34.从高度图生成的美丽地形</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>这一课将教会你如何从一个2D的灰度图创建地形</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_35.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 35" 
+            src="./../Pic/lesson35.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>35.在OpenGL中播放AVI视频</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>在OpenGL中如何播放AVI呢？利用Windows的API把每一帧作为纹理绑定到OpenGL中，虽然很慢，但它的效果不错。你可以试试。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_36.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 36" 
+            src="./../Pic/lesson36.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>36.放射模糊和渲染到纹理</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>如何实现放射状的滤镜效果呢，看上去很难，其实很简单。把渲染得图像作为纹理提取出来，在利用OpenGL本身自带的纹理过滤，就能实现这种效果，不信，你试试。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_37.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 37" 
+            src="./../Pic/lesson37.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT 
+                  class=head>37.卡通映射</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>什么是卡通了，一个轮廓加上少量的几种颜色。使用一维纹理映射，你也可以实现这种效果。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_38.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 38" 
+            src="./../Pic/lesson38.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>38.从资源文件中载入图像</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>如何把图像数据保存到*.exe程序中，使用Windows的资源文件吧，它既简单又实用。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_39.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 39" 
+            src="./../Pic/lesson39.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>39.物理模拟简介</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>还记得高中的物理吧，直线运动，自由落体运动，弹簧。在这一课里，我们将创造这一切。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_40.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 40" 
+            src="./../Pic/lesson40.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>40.绳子的模拟</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>怎样模拟一根绳子呢，把它想象成一个个紧密排列的点，怎么样有了思路了吧，在这一课你你将学会怎样建模，简单吧，你能模拟更多。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+
+
+
+
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" 
+      src="../Pic/blank(1).gif" width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD class=back2 vAlign=center align=middle width=260>
+          <a href="Tutorial_41.htm" target="_self">
+          <IMG 
+            class=solid alt="Lesson 41" 
+            src="./../Pic/lesson41.jpg" width="240" height="180"></a></TD>
+          <TD class=back2 vAlign=center height=200>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=1>
+              <TBODY>
+              <TR>
+                <TD class=news align=middle><FONT class=head>41.体积雾</FONT></TD>
+              </TR>
+              <TR>
+                <TD class=back height=158>把雾坐标绑定到顶点，你可以在雾中漫游，体验一下吧。</TD>
+              </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FONT></TD>
+    <TD class=r><IMG height=28 alt="" 
+      src="../Pic/blank(1).gif"
+  width=28></TD></TR></TBODY></TABLE>
+
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l height="1425"><IMG height=28 alt="" 
+      src="../Pic/blank(1).gif" width=28></TD>
+    <TD class=back3 vAlign=top width="100%" height="1425"> 
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_42.htm"  target="_self"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="./../Pic/lesson42.jpg" width="240" height="180"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="head">42.多重视口</font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158>画中画效果，很酷吧。使用视口它变得很简单，但渲染四次可会大大降低你的显示速度哦：）</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_43.htm" target="_self"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="./../Pic/lesson43.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="head">43.在OpenGL中使用FreeType库</font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158>使用FreeType库可以创建非常好看的反走样的字体，记住暴雪公司就是使用这个库的，就是那个做魔兽世界的。尝试一下吧，我只告诉你了基本的使用方式，你可以走的更远。</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_44.htm" target="_self"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="./../Pic/lesson44.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>44.<strong>3D 光晕</strong></b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158>当镜头对准太阳的时候就会出现这种效果，模拟它非常的简单，一点数学和纹理贴图就够了。好好看看吧。</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_45.htm" target="_self"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="./../Pic/lesson45.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>45.<strong>顶点缓存</strong></b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158>你想更快地绘制么？直接操作显卡吧，这可是前沿的图形技术，不要犹豫，我带你入门。接下来，你自己向前走吧。</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_46.htm" target="_self"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="./../Pic/lesson46.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>46.<strong>全屏反走样</strong></b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158>当今显卡的强大功能，你几乎什么都不用做，只需要在创建窗口的时候该一个数据。看看吧，驱动程序为你做完了一切。</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_47.htm" target="_self"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="./../Pic/lesson47.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>47.<strong>CG 顶点脚本</strong></b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158>nVidio的面向GPU的C语言，如果你相信它就好好学学吧，同样这里也只是个入门。记住，类似的语言还有微软的HLSL,OpenGL的GLSL,ATI的shaderMonker。不要选错哦:)</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <table cellspacing=0 cellpadding=0 width="100%" border=0>
+        <tbody> 
+        <tr> 
+          <td class=back2 valign=center align=middle width=260> <font class="text"><a href="Tutorial_48.htm" target="_self"> 
+            <img 
+            class=solid alt="Lesson 42" 
+            src="./../Pic/lesson48.jpg" width="240" height="180" border="0"></a></font></td>
+          <td class=back2 valign=center height=200> 
+            <table cellspacing=0 cellpadding=2 width="100%" border=1>
+              <tbody> 
+              <tr> 
+                <td class=news align=middle><font class="text"><b>48.<strong>轨迹球实现的鼠标旋转</strong></b></font></td>
+              </tr>
+              <tr> 
+                <td class=back height=158>使用鼠标旋转物体,很简单也有很多实现方法,这里我们教会你模拟轨迹球来实现它.</td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      </TD>
+    <TD class=r height="1425"><IMG height=28 alt="" 
+      src="../Pic/blank(1).gif" 
+  width=28></TD>
+  </TR></TBODY></TABLE> 
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=lc><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD>
+    <TD class=c width="100%"><IMG height=28 alt="" 
+      src="./../Pic/blank.gif" width=28></TD>
+    <TD class=rc><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"><FONT class=text>
+      <TABLE width="100%" border=0>
+        <TBODY>
+        <TR>          </TR></TBODY></TABLE>
+      </FONT>
+      <TABLE width="100%" border=0>
+        <TBODY>
+          <TR>
+            <TD align=middle><p align="left" class="back">我不是一个编程大牛。我只是一个普通的程序员，每天学习关于OpengGL的新东西。我不宣称懂得一切，也不保证代码没有错误。我已经尽力去消除所有的bug。但是这不是一个简单活，当你阅读课程的时候请记住这一点。</p></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <FONT class=text>
+      <TABLE width="100%" border=0>
+          <TBODY>
+          <TR>
+            <TD align=middle><strong><A href="http://nehe.gamedev.net/" 
+            target="_blank"><FONT class=link><FONT size=+1>返回nehe的网站!</FONT></FONT></A></strong></TD>
+          </TR>
+          </TBODY>
+      </TABLE>
+      </FONT></TD>
+    <TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=bl><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD>
+    <TD class=bc width="100%"><IMG height=28 alt="" 
+      src="./../Pic/blank.gif" width=28></TD>
+    <TD class=br><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD></TR></TBODY></TABLE>
+	<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=tl><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD>
+    <TD class=tc width="100%"><IMG height=28 alt="" 
+      src="./../Pic/blank.gif" width="100%"></TD>
+    <TD class=tr><IMG height=28 alt="" src="./../Pic/blank.gif" 
+    width=28></TD></TR></TBODY></TABLE>
+<TABLE width="100%" border=1 cellPadding=0 cellSpacing=0 bordercolor="#FFFFFF">
+  <TBODY>
+  <TR>
+    <TD class=l><IMG height=28 alt="" src="./../Pic/blank.gif" 
+width=28></TD>
+    <TD class=back3 vAlign=top width="100%"> <p>在这个课程上介绍的知识,可能会有错误和问题。但我只想尽我的全力去制作一个针对初学者的课程，让他们在学习感到轻松和简单。如果你对于学习OpenGL很认真，我建议你购买OpenGL Red Book(ISBN 0-201-46138-2)和OpenGL Blue Book，它们是至今为止最好的参考书。另一本我要推荐的书是OpenGL Superbible,当然你也可以选择其它的。当你在这个网站上学习时，你应该多浏览一下其它的站点，如 <a href="http://www.opengl.org/">OpenGL.org </a>. 你也可以浏览一些我提供的链接，大部分站点都是由一些非常优秀的编程人员创建的，它们很多都比我出色。我希望你能喜欢我提供给你的帮助，并且希望看到在不久的将来你能创建出你自己的程序。</p>
+      <p> <br>
+        还有重要的一点，如果你看到这些代码时觉得像以前你看到的别人的代码，请联系我。 我向你保证 ， 我所借鉴的代码要么来自于MSDN要么来自于一些为了帮助别人而创建的站点（就像我的一样）。 我从来没有有意抄袭代码 ，也将永远不会不给合适的人以信任（这里翻译有问题）。也许有一些例子表明我从一些免费网站获得代码并且不知道哪些网站从别人那里获得的，所以如果发生了 这样的事，请联系我。我会或者重写哪些代码，或者从我的工程里移除它们。多数的代码都是原创的，但是我仅仅在我完全不知道如何完成一件事时才回去借鉴代 码，并且甚至于当我确定我已经理解了那些代码之后我词啊会把它放到我的工程里。如果你在任何一课了发现错误，无论多小的错误，请通知我。</p>
+      <p><br>
+          最后一件重要的事是我的基础代码是在1997年写的，如果有什么改动的话，请留意我的网站： <br>
+      <a href="http://nehe.gamedev.net/">http://nehe.gamedev.net/</a></p></TD>
+<TD class=r><IMG height=28 alt="" src="./../Pic/blank.gif" 
+  width=28></TD></TR></TBODY>
+</TABLE>
+  
+</BODY>
+</HTML><br>
+<table width="100%" cellspacing="0" cellpadding="0"
+style="margin-top: 0pt; border-collapse: collapse;"> 
+<tr> <td align="right" style="background-color=white; border-top: 1px solid gray;"> 
+<a href="http://www.zipghost.com/" target="_blank" style="font-family: Tahoma, Verdana;
+ font-size: 11px; text-decoration: none;">The CHM file was converted to HTM by Trial version of <b>ChmD<!--80-->ecompiler</b>.</a>
+</TD>
+</TR><tr>
+<td align="right" style="background-color=white; "> 
+<a href="http://www.etextwizard.com/download/cd/cdsetup.exe" target="_blank" style="font-family: Tahoma, Verdana;
+ font-size: 11px; text-decoration: none;">Download <b>ChmDec<!--80-->ompiler</b> at: http://www.zipghost.com</a>
+</TD></tr></table>

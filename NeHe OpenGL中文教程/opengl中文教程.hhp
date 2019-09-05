@@ -1,0 +1,42 @@
+[OPTIONS]
+Binary Index=Yes
+Compatibility=1.1 or later
+Contents file=ecTOC.HHC
+Index file=ecINDEX.HHK
+Default topic=Trial Version
+Title=OpenGL中文教程 - Made by UNREGISTERED version of Easy CHM
+Default Window=Trial Version
+Compiled file=opengl中文教程.chm
+Full-text search=Yes
+Language=0x804
+Display compile notes=No
+Display compile progress=No
+Enhanced decompilation=No
+Error log file=_ErrorLog.Log
+
+UNREGISTERED version of ChmDecompiler. Please register.=Trial Version
+UNREGISTERED version of ChmDecompiler. Please register.=Trial Version
+
+[WINDOWS]
+Trial Version=UNREGISTERED version of ChmDecompiler. Please register.
+
+[ALIAS]
+#include Alias.h
+ 
+[MAP]
+#include Map.h
+ 
+[FILES]
+about.htm
+Course\blank(1).gif
+Course\filez\blank.gif
+Course\filez\lesson03.jpg
+Course\filez\lesson04.jpg
+Course\filez\lesson05.jpg
+Course\filez\lesson06.jpg
+Course\filez\lesson07.jpg
+Course\filez\lesson08.jpg
+
+....................
+Trial Version
+ 
